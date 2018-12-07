@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E49026F7-A095-46A5-A21D-41CBA5F39B6C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SVC_CustomerManagement_Domain</RootNamespace>
+    <AssemblyName>SVC_CustomerManagement_Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.Web, Version=4.121.2.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBModels\CM_CUSTOMER_BPROFILE.cs" />
+    <Compile Include="DBModels\CUSTOMER.cs" />
+    <Compile Include="DBModels\CUSTOMER_ADDRESS.cs" />
+    <Compile Include="DBModels\CUSTOMER_CORPORATE.cs" />
+    <Compile Include="DBModels\Entity.cs" />
+    <Compile Include="DBModels\CM_CUSTOMER_ADDR_BOOK.cs" />
+    <Compile Include="Models\CoporateCustomerModel.cs" />
+    <Compile Include="Models\CustomerAdmin\AttachpoboxtoLoginAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\AttachtoLoginAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\CompleteRegistrationModel.cs" />
+    <Compile Include="Models\CustomerAdmin\CreateLoginAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\CreatePostBoxAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\CustomerRegistrationResponse.cs" />
+    <Compile Include="Models\CustomerAdmin\DettachFromLoginAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\DettachPOBoxFromLoginAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\EmailCredentialsModel.cs" />
+    <Compile Include="Models\CustomerAdmin\ForgotCredentialsModel.cs" />
+    <Compile Include="Models\CustomerAdmin\ImportServiceCustomerModel.cs" />
+    <Compile Include="Models\CustomerAdmin\IsLoggedInModel.cs" />
+    <Compile Include="Models\CustomerAdmin\IsUserAccountModel.cs" />
+    <Compile Include="Models\CustomerAdmin\RegisterCustomerModel.cs" />
+    <Compile Include="Models\CustomerAdmin\SmartRegisterCustomer.cs" />
+    <Compile Include="Models\CustomerAdmin\SMSCredentialsModel.cs" />
+    <Compile Include="Models\CustomerList\CustomerListByANDFilterModel.cs" />
+    <Compile Include="Models\CustomerList\CustomerListByORFilterModel.cs" />
+    <Compile Include="Models\CustomerList\ListFilterResponse.cs" />
+    <Compile Include="Models\CustomerProfile\CCPay.cs" />
+    <Compile Include="Models\common\CommonsResponse.cs" />
+    <Compile Include="Models\CustomerProfile\DeLinkSmartPassModel.cs" />
+    <Compile Include="Models\CustomerProfile\LoginLinkSmartPass.cs" />
+    <Compile Include="Models\CustomerProfile\LoginModel.cs" />
+    <Compile Include="Models\CustomerProfile\LogOut.cs" />
+    <Compile Include="Models\CustomerProfile\Mapping\Customer.cs" />
+    <Compile Include="Models\CustomerProfile\Mapping\CustomerPoboxEDIADetailsModel.cs" />
+    <Compile Include="Models\CustomerProfile\UpdatePassword.cs" />
+    <Compile Include="Models\CustomerProfile\UpdateProfile.cs" />
+    <Compile Include="Models\LookupProvider\CustomerListByFilterModel.cs" />
+    <Compile Include="Models\LookupProvider\ServiceListResponse.cs" />
+    <Compile Include="Models\LookupProvider\SupplierListByFilterModel.cs" />
+    <Compile Include="Models\Messaging\SendEmailModel.cs" />
+    <Compile Include="Models\Messaging\SendEmailWithAttachmentsModel.cs" />
+    <Compile Include="Models\Messaging\SendSMSModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dapper.SimpleCRUD\Dapper.SimpleCRUD.csproj">
+      <Project>{96b06732-5cba-4a94-8054-9a48e95f42e8}</Project>
+      <Name>Dapper.SimpleCRUD</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\CustomerAddressBook\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
